@@ -11,3 +11,5 @@ const success = Color(0xFF06AC4E);
 const errorRed = Color(0xFFe74c3c);
 const red = Color(0xFFF3090B);
 const redColorHeart = Color(0xFFf22742);
+const imperialRed = Color(0xFFEC2938);
+const border = Color(0x80808080);

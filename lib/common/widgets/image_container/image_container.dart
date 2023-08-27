@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:marketpedia/config/theme/app_theme_constant.dart';
 
 class ImageContainer extends StatelessWidget {
   final String? imageUrl;
@@ -10,46 +11,37 @@ class ImageContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return CachedNetworkImage(
         imageUrl: imageUrl!,
-        imageBuilder: (context, imageProvider) => Padding(
-              padding: const EdgeInsetsDirectional.only(end: 14),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(20.0),
-                child: Container(
-                  width: MediaQuery.of(context).size.width / 3,
-                  height: double.maxFinite,
-                  decoration: BoxDecoration(
-                      color: Colors.black.withOpacity(0.08),
-                      image: DecorationImage(
-                          image: imageProvider, fit: BoxFit.cover)),
-                ),
+        imageBuilder: (context, imageProvider) => ClipRRect(
+              borderRadius: BorderRadius.circular(borderRadius),
+              child: Container(
+                width: MediaQuery.of(context).size.width / 3,
+                height: double.maxFinite,
+                decoration: BoxDecoration(
+                    color: Colors.black.withOpacity(0.08),
+                    image: DecorationImage(
+                        image: imageProvider, fit: BoxFit.cover)),
               ),
             ),
-        progressIndicatorBuilder: (context, url, downloadProgress) => Padding(
-              padding: const EdgeInsetsDirectional.only(end: 14),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(20.0),
-                child: Container(
-                  width: MediaQuery.of(context).size.width / 3,
-                  height: double.maxFinite,
-                  decoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.08),
-                  ),
-                  child: const CupertinoActivityIndicator(),
+        progressIndicatorBuilder: (context, url, downloadProgress) => ClipRRect(
+              borderRadius: BorderRadius.circular(borderRadius),
+              child: Container(
+                width: MediaQuery.of(context).size.width / 3,
+                height: double.maxFinite,
+                decoration: BoxDecoration(
+                  color: Colors.black.withOpacity(0.08),
                 ),
+                child: const CupertinoActivityIndicator(),
               ),
             ),
-        errorWidget: (context, url, error) => Padding(
-              padding: const EdgeInsetsDirectional.only(end: 14),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(20.0),
-                child: Container(
-                  width: MediaQuery.of(context).size.width / 3,
-                  height: double.maxFinite,
-                  decoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.08),
-                  ),
-                  child: const Icon(Icons.error),
+        errorWidget: (context, url, error) => ClipRRect(
+              borderRadius: BorderRadius.circular(borderRadius),
+              child: Container(
+                width: MediaQuery.of(context).size.width / 3,
+                height: double.maxFinite,
+                decoration: BoxDecoration(
+                  color: Colors.black.withOpacity(0.08),
                 ),
+                child: const Icon(Icons.error),
               ),
             ));
   }

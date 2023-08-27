@@ -5,6 +5,9 @@ import 'package:marketpedia/config/theme/colors.dart';
 import 'package:marketpedia/features/home/presentation/widgets/bottom_navigation_bar/bottom_navbar.dart';
 import 'package:marketpedia/features/home/presentation/widgets/carousel/carousel.dart';
 import 'package:marketpedia/features/home/presentation/widgets/center_navbar/center_navbar.dart';
+import 'package:marketpedia/features/home/presentation/widgets/home_headline/home_headline.dart';
+import 'package:marketpedia/features/home/presentation/widgets/list_categories/list_categories.dart';
+import 'package:marketpedia/features/home/presentation/widgets/list_products/list_product.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -18,11 +21,20 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _buildAppBar(),
-      body: const Padding(
-        padding: EdgeInsets.all(12),
-        child: Column(
-          children: [HomeCarousel()],
-        ),
+      body: Column(
+        children: [
+          const HomeCarousel(),
+          HomeHeadline(
+            title: 'Top Categories',
+            onViewMore: () {},
+          ),
+          const ListCategories(),
+          HomeHeadline(
+            title: 'New Arrivals',
+            onViewMore: () {},
+          ),
+          ListProducts()
+        ],
       ),
       bottomNavigationBar: const CustomBottomNavigationBar(),
       floatingActionButtonLocation:

@@ -28,7 +28,7 @@ class _HomeCarouselState extends State<HomeCarousel> {
         CarouselSlider(
           items: imgList.map((image) {
             return Container(
-              margin: const EdgeInsets.all(12),
+              margin: const EdgeInsets.symmetric(horizontal: 12),
               child: ClipRRect(
                 borderRadius: const BorderRadius.all(Radius.circular(10.0)),
                 child: ImageContainer(imageUrl: image),
@@ -37,7 +37,8 @@ class _HomeCarouselState extends State<HomeCarousel> {
           }).toList(),
           options: CarouselOptions(
             disableCenter: true,
-            viewportFraction: 1.0,
+            viewportFraction: 1,
+            height: 180,
             autoPlay: true,
             onPageChanged: (index, reason) {
               setState(() {
@@ -46,6 +47,9 @@ class _HomeCarouselState extends State<HomeCarousel> {
             },
           ),
         ),
+        const SizedBox(
+          height: 14,
+        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: imgList.map((image) {
@@ -53,8 +57,7 @@ class _HomeCarouselState extends State<HomeCarousel> {
             return Container(
               width: 8.0,
               height: 8.0,
-              margin:
-                  const EdgeInsets.symmetric(vertical: 10.0, horizontal: 4.0),
+              margin: const EdgeInsets.symmetric(horizontal: 4.0),
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: _currentIndex == index ? darkBg : grey400,
