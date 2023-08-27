@@ -7,17 +7,16 @@ class CartList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: MediaQuery.of(context).size.width * 0.95,
         child: ListView.separated(
-          separatorBuilder: (context, index) => const SizedBox(
-            height: 12,
-          ),
-          itemCount: 10,
-          itemBuilder: (context, index) {
-            return const ProductCard(
-              isCart: true,
-            );
-          },
-        ));
+      separatorBuilder: (context, index) => const SizedBox(
+        height: 12,
+      ),
+      itemCount: 10,
+      itemBuilder: (context, index) {
+        return const ProductCard(
+          isCart: true,
+        );
+      },
+    ));
   }
 }

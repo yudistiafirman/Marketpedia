@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:marketpedia/common/widgets/image_container/image_container.dart';
 import 'package:marketpedia/common/widgets/rating_button/rating_button.dart';
 import 'package:marketpedia/config/theme/app_text.dart';
@@ -32,7 +33,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               )),
           const SizedBox(height: 12),
           Expanded(
-              flex: 5,
+              flex: 3,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -65,13 +66,16 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                   SizedBox(
                     height: 12,
                   ),
-                  const ListSize(),
-                  SizedBox(
-                    height: 12,
-                  ),
-                  const AddToCartBtn()
+                  Expanded(child: const ListSize()),
                 ],
-              ))
+              )),
+          SizedBox(
+            height: 12,
+          ),
+          const AddToCartBtn(),
+          SizedBox(
+            height: 24,
+          ),
         ]),
       ),
     );
@@ -85,7 +89,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
       ),
       centerTitle: true,
       leading: GestureDetector(
-        onTap: () {},
+        onTap: () => GoRouter.of(context).go('/'),
         child: const Icon(
           Icons.chevron_left_outlined,
           size: appbarIconSize,

@@ -10,7 +10,7 @@ class CommonFloatingActionButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: () {},
       style: ElevatedButton.styleFrom(
-          minimumSize: const Size(double.infinity, 0),
+          minimumSize: const Size(double.infinity, 12),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10), // Set border radius
           ),

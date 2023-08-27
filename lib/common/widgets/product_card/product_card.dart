@@ -11,12 +11,14 @@ class ProductCard extends StatelessWidget {
   final Function()? onAddToCart;
   final Function()? onAddQuantity;
   final Function()? onRemoveQuantity;
+  final Function()? onTapProduct;
 
   const ProductCard(
       {super.key,
       required this.isCart,
       this.onAddToCart,
       this.onAddQuantity,
+      this.onTapProduct,
       this.onRemoveQuantity});
 
   @override
@@ -38,9 +40,12 @@ class ProductCard extends StatelessWidget {
                 decoration: BoxDecoration(
                     color: white,
                     borderRadius: BorderRadius.circular(borderRadius)),
-                child: const ImageContainer(
-                    imageUrl:
-                        'https://images.unsplash.com/photo-1546502208-81d149d52bd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2946&q=80'),
+                child: GestureDetector(
+                  onTap: onTapProduct,
+                  child: const ImageContainer(
+                      imageUrl:
+                          'https://images.unsplash.com/photo-1546502208-81d149d52bd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2946&q=80'),
+                ),
               ),
             ),
             const Expanded(flex: 1, child: SizedBox()),
@@ -89,7 +94,7 @@ class ProductCard extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(
-                    height: 8,
+                    height: 4,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

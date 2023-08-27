@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:marketpedia/config/theme/app_theme_constant.dart';
 import 'package:marketpedia/config/theme/colors.dart';
 
@@ -50,6 +51,19 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
         setState(() {
           _currentIndex = index;
         });
+
+        switch (_currentIndex) {
+          case 0:
+            GoRouter.of(context).go('/');
+            break;
+          case 1:
+            GoRouter.of(context).go('/search');
+          case 2:
+            GoRouter.of(context).go('/history');
+          case 3:
+            GoRouter.of(context).go('/profile');
+          default:
+        }
       },
       child: Column(
         mainAxisSize: MainAxisSize.min,

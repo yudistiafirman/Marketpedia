@@ -13,31 +13,27 @@ class AddToCartBtn extends StatefulWidget {
 class _AddToCartBtnState extends State<AddToCartBtn> {
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 60,
-      width: double.infinity,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Container(
-            width: 60,
-            height: 60,
-            decoration: BoxDecoration(
-                color: grey400,
-                borderRadius: BorderRadius.circular(borderRadius)),
-            child: const Center(
-              child: Icon(
-                Icons.shopping_bag_outlined,
-                color: darkBg,
-              ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Container(
+          width: 60,
+          height: 48,
+          decoration: BoxDecoration(
+              color: grey400,
+              borderRadius: BorderRadius.circular(borderRadius)),
+          child: const Center(
+            child: Icon(
+              Icons.shopping_bag_outlined,
+              color: darkBg,
             ),
           ),
-          SizedBox(
-            width: 12,
-          ),
-          Expanded(child: CommonFloatingActionButton())
-        ],
-      ),
+        ),
+        SizedBox(
+          width: 12,
+        ),
+        Expanded(child: CommonFloatingActionButton())
+      ],
     );
   }
 }

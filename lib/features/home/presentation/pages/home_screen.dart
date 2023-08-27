@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:marketpedia/config/theme/app_text.dart';
 import 'package:marketpedia/config/theme/app_theme_constant.dart';
 import 'package:marketpedia/config/theme/colors.dart';
-import 'package:marketpedia/features/home/presentation/widgets/bottom_navigation_bar/bottom_navbar.dart';
 import 'package:marketpedia/features/home/presentation/widgets/carousel/carousel.dart';
-import 'package:marketpedia/features/home/presentation/widgets/center_navbar/center_navbar.dart';
 import 'package:marketpedia/features/home/presentation/widgets/home_headline/home_headline.dart';
 import 'package:marketpedia/features/home/presentation/widgets/list_categories/list_categories.dart';
 import 'package:marketpedia/features/home/presentation/widgets/list_products/list_product.dart';
@@ -34,13 +31,9 @@ class _HomeScreenState extends State<HomeScreen> {
             title: 'New Arrivals',
             onViewMore: () {},
           ),
-          ListProducts()
+          const Expanded(child: const ListProducts())
         ],
       ),
-      bottomNavigationBar: const CustomBottomNavigationBar(),
-      floatingActionButtonLocation:
-          FloatingActionButtonLocation.miniCenterDocked,
-      floatingActionButton: CenternNavbar(onPress: () {}),
     );
   }
 

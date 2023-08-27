@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:marketpedia/common/widgets/floating_action_button/floating_action_button.dart';
 import 'package:marketpedia/config/theme/app_text.dart';
 import 'package:marketpedia/config/theme/app_theme_constant.dart';
@@ -17,14 +18,15 @@ class _CartScreenState extends State<CartScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _buildAppBar(),
-      body: const Padding(
+      body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 12),
         child: Column(children: [
-          CartList(),
+          Expanded(flex: 2, child: CartList()),
           SizedBox(height: 12),
           BillingInformation(),
           SizedBox(height: 12),
-          CommonFloatingActionButton()
+          CommonFloatingActionButton(),
+          SizedBox(height: 24),
         ]),
       ),
     );
@@ -38,7 +40,7 @@ class _CartScreenState extends State<CartScreen> {
       ),
       centerTitle: true,
       leading: GestureDetector(
-        onTap: () {},
+        onTap: () => GoRouter.of(context).go('/'),
         child: const Icon(
           Icons.chevron_left_outlined,
           size: appbarIconSize,

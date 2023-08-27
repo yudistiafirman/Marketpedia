@@ -11,12 +11,13 @@ class CenternNavbar extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: FloatingActionButton(
-          child: const Icon(
-            Icons.shopping_cart_outlined,
-            color: white,
-            size: navBarIconSize,
-          ),
-          onPressed: () {}),
+        onPressed: onPress,
+        child: const Icon(
+          Icons.shopping_cart_outlined,
+          color: white,
+          size: navBarIconSize,
+        ),
+      ),
     );
   }
 }
