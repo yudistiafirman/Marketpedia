@@ -39,3 +39,5 @@ const TextStyle lightBodyText =
 
 const TextStyle whiteLightText =
     TextStyle(fontFamily: 'Roboto-Light', fontSize: 14, color: white);
+const TextStyle successLightText =
+    TextStyle(fontFamily: 'Roboto-Light', fontSize: 16, color: success);

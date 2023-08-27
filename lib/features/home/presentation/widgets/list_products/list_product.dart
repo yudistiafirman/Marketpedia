@@ -14,7 +14,10 @@ class _ListProductsState extends State<ListProducts> {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 12),
       height: MediaQuery.of(context).size.width * 0.5,
-      child: ListView.builder(
+      child: ListView.separated(
+        separatorBuilder: (context, index) => SizedBox(
+          height: 12,
+        ),
         itemCount: 10,
         itemBuilder: (context, index) {
           return const ProductCard(

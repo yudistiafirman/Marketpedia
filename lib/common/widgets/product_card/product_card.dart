@@ -21,9 +21,9 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 0,
-      color: grey200,
+    return Container(
+      decoration: BoxDecoration(
+          color: grey200, borderRadius: BorderRadius.circular(borderRadius)),
       child: SizedBox(
           child: Padding(
         padding: const EdgeInsets.all(16.0),
