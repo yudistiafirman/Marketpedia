@@ -34,7 +34,7 @@ class _CartScreenState extends State<CartScreen> {
     return AppBar(
       title: const Text(
         'Shopping Cart',
-        style: headline_1,
+        style: commonHeadline,
       ),
       centerTitle: true,
       leading: GestureDetector(

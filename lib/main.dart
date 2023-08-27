@@ -4,6 +4,7 @@ import 'package:marketpedia/config/theme/app_theme.dart';
 import 'package:marketpedia/config/theme/colors.dart';
 import 'package:marketpedia/features/cart/presentation/pages/cart_screen.dart';
 import 'package:marketpedia/features/home/presentation/pages/home_screen.dart';
+import 'package:marketpedia/features/product_detail/presentation/pages/product_detail_screen.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Marketpedia',
       theme: appTheme,
-      home: const CartScreen(),
+      home: const ProductDetailScreen(),
     );
   }
 }

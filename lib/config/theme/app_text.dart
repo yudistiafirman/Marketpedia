@@ -8,6 +8,12 @@ const TextStyle headline_1 = TextStyle(
   color: darkText,
 );
 
+const TextStyle commonHeadline = TextStyle(
+    fontFamily: 'Roboto-Bold',
+    fontSize: 22,
+    fontWeight: FontWeight.w500,
+    color: darkText);
+
 const TextStyle headline_2 = TextStyle(
     fontFamily: 'Roboto-Medium',
     fontSize: 20,
@@ -34,6 +40,11 @@ const TextStyle boldBodyText_2 = TextStyle(
     fontSize: 16,
     color: darkText,
     fontWeight: FontWeight.w400);
+const TextStyle whiteBoldBodyText = TextStyle(
+    fontFamily: 'Roboto-Bold',
+    fontSize: 16,
+    color: white,
+    fontWeight: FontWeight.w700);
 const TextStyle lightBodyText =
     TextStyle(fontFamily: 'Roboto-Light', fontSize: 16, color: darkText);
 
