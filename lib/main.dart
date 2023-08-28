@@ -3,12 +3,9 @@ import 'package:flutter/services.dart';
 import 'package:marketpedia/app.dart';
 import 'package:marketpedia/core/service_locator.dart';
 
-void main() {
-  SystemChrome.setSystemUIOverlayStyle(
-    const SystemUiOverlayStyle(
-      statusBarColor: Colors.black,
-    ),
-  );
-  serviceLocatorInit();
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await serviceLocatorInit();
   runApp(const App());
 }
