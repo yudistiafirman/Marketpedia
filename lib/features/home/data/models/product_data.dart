@@ -5,8 +5,8 @@ import 'package:marketpedia/features/home/domain/entities/product_data.dart';
 
 class ProductDataModel extends ProductDataEntity {
   const ProductDataModel({
-    List<ProductModel>? productData,
-    List<TotalPageModel>? pageData,
+    required List<ProductModel> productData,
+    required List<TotalPageModel> pageData,
   }) : super(productData, pageData);
 
   factory ProductDataModel.fromJson(Map<String, dynamic> json) {

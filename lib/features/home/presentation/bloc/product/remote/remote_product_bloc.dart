@@ -7,17 +7,17 @@ import 'package:marketpedia/features/home/presentation/bloc/product/remote/remot
 import 'package:marketpedia/features/home/presentation/bloc/product/remote/remote_product_state.dart';
 
 class RemoteProductBloc extends Bloc<RemoteProductEvent, RemoteProductState> {
-  final GetProductUseCase _getArticleUseCase;
-  RemoteProductBloc(this._getArticleUseCase)
+  final GetProductUseCase _getProductUseCase;
+  RemoteProductBloc(this._getProductUseCase)
       : super(const RemoteProductLoading()) {
     on<GetProduct>(getProduct);
   }
 
   FutureOr<void> getProduct(
       GetProduct event, Emitter<RemoteProductState> emit) async {
-    final dataState = await _getArticleUseCase(params: event.page);
+    final dataState = await _getProductUseCase(params: event.page);
 
-    if (dataState is DataSuccess && dataState.data!.isNotEmpty) {
+    if (dataState is DataSuccess) {
       emit(RemoteProductLoaded(dataState.data!));
     }
     if (dataState is DataFailed) {

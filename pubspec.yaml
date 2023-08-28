@@ -21,14 +21,11 @@ dependencies:
   #route
   go_router: ^10.1.0
 
-  #http request
-  dio: ^5.3.2
-
-  #date format
+  #database
   floor: ^1.4.2
 
   #make request to api
-  retrofit: ^4.0.1
+  http: ^1.1.0
 
   #comparing dart object
   equatable: ^2.0.5
@@ -39,10 +36,12 @@ dependencies:
   #cached_network_image
   cached_network_image: ^3.2.3
 
+  #formatter
+  intl: ^0.18.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  retrofit_generator: ^7.0.8
   floor_generator: ^1.4.2
   build_runner: ^2.4.6
   flutter_lints: ^2.0.0

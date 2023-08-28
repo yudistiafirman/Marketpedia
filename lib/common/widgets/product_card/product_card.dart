@@ -5,6 +5,7 @@ import 'package:marketpedia/common/widgets/rating_button/rating_button.dart';
 import 'package:marketpedia/config/theme/app_text.dart';
 import 'package:marketpedia/config/theme/app_theme_constant.dart';
 import 'package:marketpedia/config/theme/colors.dart';
+import 'package:marketpedia/core/utils/helper.dart';
 
 class ProductCard extends StatelessWidget {
   final bool isCart;
@@ -12,10 +13,16 @@ class ProductCard extends StatelessWidget {
   final Function()? onAddQuantity;
   final Function()? onRemoveQuantity;
   final Function()? onTapProduct;
+  final String? productName;
+  final String? productPhoto;
+  final String? productPrice;
 
   const ProductCard(
       {super.key,
       required this.isCart,
+      this.productName,
+      this.productPhoto,
+      this.productPrice,
       this.onAddToCart,
       this.onAddQuantity,
       this.onTapProduct,
@@ -42,9 +49,7 @@ class ProductCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(borderRadius)),
                 child: GestureDetector(
                   onTap: onTapProduct,
-                  child: const ImageContainer(
-                      imageUrl:
-                          'https://images.unsplash.com/photo-1546502208-81d149d52bd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2946&q=80'),
+                  child: ImageContainer(imageUrl: productPhoto),
                 ),
               ),
             ),
@@ -58,8 +63,8 @@ class ProductCard extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const Text(
-                        'Cooper Mount Bike',
+                      Text(
+                        productName ?? '',
                         style: bodyText_1,
                       ),
                       isCart
@@ -81,7 +86,8 @@ class ProductCard extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const Text('234', style: boldBodyText),
+                      Text(formatCurrency(double.parse(productPrice ?? '0')),
+                          style: boldBodyText),
                       isCart
                           ? const Padding(
                               padding: EdgeInsets.symmetric(horizontal: 8),

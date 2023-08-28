@@ -2,13 +2,13 @@ import 'package:marketpedia/features/home/domain/entities/product.dart';
 
 class ProductModel extends ProductEntity {
   const ProductModel({
-    int? no,
-    String? productId,
-    String? productName,
-    String? productDescription,
-    String? productValue,
-    String? productType,
-    String? productPhoto,
+    required int no,
+    required String productId,
+    required productName,
+    required productDescription,
+    required String productValue,
+    required String productType,
+    required String productPhoto,
   }) : super(
             no: no,
             productId: productId,

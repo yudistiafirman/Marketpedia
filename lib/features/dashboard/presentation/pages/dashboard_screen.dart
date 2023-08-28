@@ -12,8 +12,7 @@ class DashboardScreen extends StatelessWidget {
     return Scaffold(
       body: child,
       bottomNavigationBar: const CustomBottomNavigationBar(),
-      floatingActionButtonLocation:
-          FloatingActionButtonLocation.miniCenterDocked,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton:
           CenternNavbar(onPress: () => GoRouter.of(context).go('/cart')),
     );
